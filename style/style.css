@@ -22,8 +22,22 @@ body{
 }
 
 /* shared items */
+.section_description{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dark_3);
+    margin-bottom: 30px;
+}
+
+.section_heading{
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--dark_2);
+    margin: 0 0 16px;
+}
 section{
-    margin-top: 105px;
+    max-width: 1152px;
+    margin: 105px auto 0;
 }
 
 .flex{
@@ -97,9 +111,9 @@ section{
 
 /* feature section start */
 .features{
-    padding: 0 240px;
     align-items: center;
     gap: 60px;
+    padding: 0 50px;
 }
 
 .feature_images{
@@ -122,6 +136,43 @@ section{
     color: var(--primary);
 }
 
+
+
+
+/* facts seciton start */
+.fact_card_wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 0 40px;
+    gap: 100px;
+    margin: 80px 0 40px;
+}
+.fact_card{
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    width: 193px;
+    height: 193px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fact_card .number{
+    margin: 10px 0 5px;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--dark_2);
+}
+
+.facts_description{
+    font-size: 1rem;
+    color: var(--dark_3);
+    font-weight: normal;
+}
+.facts p{
+    max-width: 435px;
+}
 /*  responsive  section*/
 @media screen and (max-width:576px) {
     .header{
@@ -131,7 +182,7 @@ section{
         font-size: 3rem;
     }
 
-    .navbar , .nav_links , .features{
+    .navbar , .nav_links{
         flex-direction: column;
     }
 
@@ -143,6 +194,7 @@ section{
     .features{
         padding: 20px;
         margin-top: 50px;
+        flex-direction: column-reverse;
     }
 
     .feature_images{
@@ -154,15 +206,48 @@ section{
 
     section{
         padding: 20px;
+        width: 100%;
+        margin-top: 20px;
     }
     .banner{
         margin-top: 50px;
+    }
+
+    .fact_card_wrapper{
+        grid-template-columns: repeat(1,1fr);
+        justify-content: center;
+        gap: 20px;
+    }
+    .fact_card{
+        width: 100%;
+    }
+    .fact_card_wrapper {
+        margin: 20px 0 20px;
     }
 
 }
 
 @media screen and (max-width:992px) and (min-width:576.1px){
     .header{
+        padding: 40px;
+    }
+    .features{
+        flex-direction: column-reverse;
+        padding: 40px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .fact_card_wrapper{
+        grid-template-columns: repeat(2,1fr);
+        gap: auto;
+    }
+    .fact_card{
+        width: 100%;
+        gap: 50px;
+    }
+
+    section{
         padding: 40px;
     }
 }
